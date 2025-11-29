@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roandrie <roandrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 17:13:42 by roandrie          #+#    #+#             */
-/*   Updated: 2025/11/29 13:37:22 by roandrie         ###   ########.fr       */
+/*   Created: 2025/11/29 21:26:29 by roandrie          #+#    #+#             */
+/*   Updated: 2025/11/29 21:28:08 by roandrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+long	ft_atol(const char *nptr)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	int		sign;
+	long	result;
+
+	sign = 1;
+	result = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-')
+	{
+		sign = -1;
+		nptr++;
+	}
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = (result * 10) + (*nptr - '0');
+		nptr++;
+	}
+	return (result * sign);
 }

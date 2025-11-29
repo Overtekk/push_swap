@@ -6,7 +6,7 @@
 /*   By: roandrie <roandrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:59:34 by roandrie          #+#    #+#             */
-/*   Updated: 2025/11/13 14:25:47 by roandrie         ###   ########.fr       */
+/*   Updated: 2025/11/29 21:30:42 by roandrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -73,13 +74,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //#FT_PRINTF#//
-int		ft_printf(const char *str, ...);
-int		ft_printchar(int c);
-int		ft_printstr(char *str);
-int		ft_printnumber(int n);
-int		ft_print_unsi_number(unsigned int n);
-int		ft_print_hexa(unsigned int n, char c);
-int		ft_print_ptr(void *ptr);
+int		ft_printf(int fd, const char *str, ...);
+int		ft_printchar(int fd, int c);
+int		ft_check_sign(int fd, char str, va_list args);
+int		ft_printstr(int fd, char *str);
+int		ft_printnumber(int fd, int n);
+int		ft_print_unsi_number(int fd, unsigned int n);
+int		ft_print_hexa(int fd, unsigned int n, char c);
+int		ft_print_ptr(int fd, void *ptr);
 
 //#GET_NEXT_LINE#//
 # ifndef BUFFER_SIZE
