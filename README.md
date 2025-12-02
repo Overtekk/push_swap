@@ -25,10 +25,10 @@ We have to produce a program that takes a list of numbers as arguments and outpu
 * **100 numbers:** Target is less than 700 moves.
 * **500 numbers:** Target is less than 5500 moves.
 > [!Note]
-> sa / sb / ss	: swap stack a, b or both.
-> pa / pb		: push the first int into the other stack.
-> ra / rb / rr	: rotate stack a, b or both (the first one become the last, other move by one upwards).
-> rra / rrb / rrr : rotate stack a, b or both (the last one become the first, other move by one downards)
+> **sa** / **sb** / **ss**	: swap stack a, b or both.\
+> **pa** / **pb**		: push the first int into the other stack.\
+> **ra** / **rb** / **rr**	: rotate stack a, b or both (the first one become the last, other move by one upwards).\
+> **rra** / **rrb** / **rrr** : rotate stack a, b or both (the last one become the first, other move by one downards)
 
 **📦 Library Integration:**
 We are allowed to use our `libft` (especially linked lists or standard helper functions). However, the core logic relies entirely on the custom sorting algorithm we design.
@@ -62,11 +62,11 @@ or
 ### This will sort the numbers in ascending order and display the sequence of instructions needed to sort.
 
 ## Here is the list of errors:
-- [] Do nothing if there is not argument.
-- [] Error when encounters a non digit character.
-- [] Error if two, or more, numbers are identical.
-- [] Error if the number exceeds int value.
-- [] Error if there is a string and int.
+- [ ] Do nothing if there is not argument.
+- [ ] Error when encounters a non digit character.
+- [ ] Error if two, or more, numbers are identical.
+- [ ] Error if the number exceeds int value.
+- [ ] Error if there is a string and int.
 
 ## I explain what I do below:
 - []
