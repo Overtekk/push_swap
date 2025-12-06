@@ -109,7 +109,7 @@ Finally, I rotate **Stack A** one last time to bring the smallest number (minimu
 
 ## **Source**:
 
-#### https://medium.com/@ayogun/push-swap-c1f5d2d41e97 \
-#### https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0 \
+#### https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+#### https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0
 #### https://www.youtube.com/watch?v=wRvipSG4Mmk
 ---
