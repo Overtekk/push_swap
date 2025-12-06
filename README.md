@@ -44,7 +44,7 @@ Not completed yet.
 
 ### First, clone this repository.
 ```bash
-https://github.com/Overtekk/so_long.git
+https://github.com/Overtekk/push_swap.git
 ```
 ### Compile with make
 ```bash
@@ -69,8 +69,47 @@ or
 - [ ] Error if there is a string and int.
 
 ## I explain what I do below:
-- []
 
-⚠️**TO DO**
+### 1. Parsing and Error Management
+First, the program parses the arguments to ensure validity. It handles both single string input (`"./push_swap '1 2 3'"`) and multiple arguments (`./push_swap 1 2 3`). It checks for:
+- Non-numeric characters.
+- Duplicates.
+- Integer overflow/underflow.
 
+### 2. Sorting Small Stacks (3 numbers)
+For a stack of 3 numbers, there are only 5 possible permutation cases (since the sorted case is already handled).
+- I find the highest number.
+- Depending on its position and the position of the other numbers, I execute a single combination of `swap` and `rotate` operations to sort the stack instantly (hardcoded logic for efficiency).
+
+### 3. Sorting Medium Stacks (5 numbers)
+- I push the two first numbers from **Stack A** to **Stack B**.
+- I sort the remaining 3 numbers in **Stack A** using the algorithm described above.
+- Then, I push the two numbers back from **Stack B** to **Stack A**, ensuring they land in the correct position.
+
+### 4. The Main Algorithm (Large Stacks)
+For larger sets of numbers, I use a **Cost-based Greedy Algorithm** (often referred to as the "Turk Algorithm" *(sources below)*). The logic is divided into two phases:
+
+### Phase 1: A to B (Pushing Phase)
+I push elements from **Stack A** to **Stack B** until only 3 elements remain in A. However, I don't push randomly:
+- For every number in A, I calculate its "target" position in B. It means, its closest number. In 7 / 10 / 98 / -40 for **Stack A** and 58 / 3 / 23 for **Stack B**. Closest number for **7 is 3**, for **10 > 3** / **98 > 58** and **-40 > 3**.
+- I calculate exactly how many operations (`ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`) are needed to move each number to its target.
+- I find the "median" is the list (1 for upper, 0 for below) to know if I execute `rr`/`rrr`.
+- I select the "cheapest" node (the one requiring the fewest moves), execute the optimal rotation combination (optimizing with double rotations `rr`/`rrr` where possible), and push it to B.
+
+### Phase 2: B to A (Return Phase)
+Once **Stack A** has only 3 sorted elements:
+- I use the **3 numbers sorting stack algorithm** in **Stack A**.
+- I iterate through **Stack B**.
+- For each element, I find its **Target Node** in **Stack A** (the smallest number in A that is larger than the element B).
+- I rotate **Stack A** to bring this target to the top.
+- I push the element from B to A.
+
+### Final Step: Alignment
+Finally, I rotate **Stack A** one last time to bring the smallest number (minimum) to the top of the stack, completing the sort.
+
+## **Source**:
+
+#### https://medium.com/@ayogun/push-swap-c1f5d2d41e97 \
+#### https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0 \
+#### https://www.youtube.com/watch?v=wRvipSG4Mmk
 ---
