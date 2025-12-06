@@ -7,17 +7,16 @@
 test.c
 a.out
 push_swap
+checker_linux
 
 # Library
 *.a
-libftprintf.a
 libft.a
 
 # Object
 *.o
 /obj
 libft/obj
-minilibx-linux/obj
 
 #Other
 .DS_STORE

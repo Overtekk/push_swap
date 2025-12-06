@@ -20,6 +20,8 @@ C_FILE			=	main.c					\
 					sort/reverse_rotate.c	\
 					utils/list_management.c	\
 					utils/list_utils.c		\
+					utils/algo_utils.c		\
+					utils/algo_move.c		\
 					utils/ft_error.c		\
 					utils/debug.c
 SRCS			=	$(addprefix $(SRCS_DIR)/, $(C_FILE))
