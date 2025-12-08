@@ -42,12 +42,11 @@ Not completed yet.
 
 ## 🔷 Usage
 
-### First, clone this repository.
+### First, clone this repository and run `make`:.
+
 ```bash
-https://github.com/Overtekk/push_swap.git
-```
-### Compile with make
-```bash
+git clone https://github.com/Overtekk/push_swap
+cd push_swap
 make
 ```
 
