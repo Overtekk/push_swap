@@ -1,48 +1,42 @@
-<p align="center">
-  <img src="assets_github/push_swap.png" width="350" />
-</p>
-<h3 align="center">
-  <em>Because Swap_push doesn’t feel as natural</em>
-</h3>
+*This project has been created as part of the 42 curriculum by \<roandrie>.*
 
----
+### 📂 Description
 
-## ⚠️ Disclaimer
+The goal of this project is to sort a random list of integers using two stacks, **Stack A** and **Stack B**, and a **limited set of instructions**. It serves as a deep dive into **algorithmic complexity** and **data structures**.
 
-- **Full Portfolio:** This repository focuses on this specific project. You can find my entire 42 curriculum 👉 [here](https://github.com/Overtekk/42).
-- **Subject Rules:** I strictly follow the rules regarding 42 subjects; I cannot share the PDFs, but I explain the concepts in this README.
-- **Archive State:** The code is preserved exactly as it was during evaluation (graded state). I do not update it, so you can see my progress and mistakes from that time.
-- **Academic Integrity:** I encourage you to try the project yourself first. Use this repo only as a reference, not for copy-pasting. Be patient, you will succeed.
+Unlike standard sorting problems where you can swap any values, here we are constrained by the game rules. We can only manipulate the top of the stacks, push elements between them, or rotate the stacks. The challenge is to sort with the **minimum number of operations** possible:\
+#### For 100% ->
+* **100 numbers:** less than 700 moves.
+* **500 numbers:** less than 5500 moves.
 
-## 📂 Purpose
+### 📊 Operations we can use:
+**sa (swap a):** Swap the first 2 elements at the top of stack a.\
+&emsp;Do nothing if there is only one element or none.\
+****sb (swap b):** Swap the first 2 elements at the top of stack b.\
+&emsp;Do nothing if there is only one element or none.\
+**ss** : sa and sb at the same time.\
+**pa (push a):** Take the first element at the top of b and put it at the top of a.\
+&emsp;Do nothing if b is empty.\
+**pb (push b):** Take the first element at the top of a and put it at the top of b.\
+&emsp;Do nothing if a is empty.\
+**ra (rotate a):** Shift up all elements of stack a by 1.\
+&emsp;The first element becomes the last one.\
+**rb (rotate b):** Shift up all elements of stack b by 1.\
+&emsp;The first element becomes the last one.\
+**rr :** ra and rb at the same time.\
+**rra (reverse rotate a):** Shift down all elements of stack a by 1.\
+&emsp;The last element becomes the first one.\
+**rrb (reverse rotate b):** Shift down all elements of stack b by 1.\
+&emsp;The last element becomes the first one.\
+**rrr :** rra and rrb at the same time.
 
-The goal of this project is to sort a random list of integers using two stacks (**Stack A** and **Stack B**) and a limited set of instructions. It serves as a deep dive into **algorithmic complexity** and **data structures**.
-
-Unlike standard sorting problems where you can swap any values, here we are constrained by the game rules. We can only manipulate the top of the stacks, push elements between them, or rotate the stacks. The challenge isn't just to sort, but to sort with the **minimum number of operations** possible.
-
-**📊 The Challenge:**
-We have to produce a program that takes a list of numbers as arguments and outputs the series of instructions (`sa`, `pb`, `ra`, `rra`...) required to sort them. The efficiency is graded based on the number of moves:
-* **100 numbers:** Target is less than 700 moves.
-* **500 numbers:** Target is less than 5500 moves.
-> [!Note]
-> **sa** / **sb** / **ss**	: swap stack a, b or both.\
-> **pa** / **pb**		: push the first int into the other stack.\
-> **ra** / **rb** / **rr**	: rotate stack a, b or both (the first one become the last, other move by one upwards).\
-> **rra** / **rrb** / **rrr** : rotate stack a, b or both (the last one become the first, other move by one downards)
-
-**📦 Library Integration:**
+### 📦 **Library Integration:**
 We are allowed to use our `libft` (especially linked lists or standard helper functions). However, the core logic relies entirely on the custom sorting algorithm we design.
 
-**🏆 Goal:**
-Sort the integers in ascending order in Stack A using the lowest possible instruction count.
+## Instructions
 
-## 🐨 Status
-
-Not completed yet.
-
-## 🔷 Usage
-
-### First, clone this repository and run `make`:.
+### 🧙‍♂️ Compilation
+To compile the project, clone [the repository](https://github.com/Overtekk/push_swap) and run `make`:
 
 ```bash
 git clone https://github.com/Overtekk/push_swap
@@ -58,14 +52,6 @@ or
 ```bash
 ./push_swap "4752 1 -85 3 +21"
 ```
-### This will sort the numbers in ascending order and display the sequence of instructions needed to sort.
-
-## Here is the list of errors:
-- [ ] Do nothing if there is not argument.
-- [ ] Error when encounters a non digit character.
-- [ ] Error if two, or more, numbers are identical.
-- [ ] Error if the number exceeds int value.
-- [ ] Error if there is a string and int.
 
 ## I explain what I do below:
 
@@ -106,7 +92,7 @@ Once **Stack A** has only 3 sorted elements:
 ### Final Step: Alignment
 Finally, I rotate **Stack A** one last time to bring the smallest number (minimum) to the top of the stack, completing the sort.
 
-## **Source**:
+## 📃 **Resources:**
 
 #### https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 #### https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0
