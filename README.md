@@ -38,7 +38,10 @@ Sort the integers in ascending order in Stack A using the lowest possible instru
 
 ## 🐨 Status
 
-Not completed yet.
+Completed on **13/12/2025** without bonus.
+<p align="left">
+  <img src="assets_github/push_swap_score.png" width="150" />
+</p>
 
 ## 🔷 Usage
 
