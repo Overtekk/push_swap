@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets_github/push_swap.png?=v42" width="250" />
+  <img src="assets_github/push_swapv2.png?=v42" width="250" />
 </p>
 <h3 align="center">
   <em>Because Swap_push doesn’t feel as natural</em>
